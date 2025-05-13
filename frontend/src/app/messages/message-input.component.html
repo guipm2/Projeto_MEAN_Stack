@@ -1,0 +1,15 @@
+<!-- src/app/messages/message-input.component.html -->
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <textarea name="content" ngModel placeholder="Digite sua mensagem..." class="form-control" rows="3"
+    required></textarea>
+
+  <!-- Aviso se não estiver logado -->
+  <p *ngIf="!auth.getCurrentUser()" class="text-danger mt-2">
+    Faça login para poder enviar mensagens.
+  </p>
+
+  <button type="submit" class="btn btn-primary mt-2" [disabled]="f.invalid || !auth.getCurrentUser()">
+    Enviar
+  </button>
+</form>

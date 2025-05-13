@@ -1,0 +1,14 @@
+Instale as seguintes dependências para rodar nosso projeto:
+
+Cole no seu terminal, cmd ou powershell
+
+cd backend
+npm install express mongoose body-parser hbs multer bcrypt jsonwebtoken dotenv
+npm install --save-dev nodemon
+
+cd frontend
+npm install
+
+cd project-mean
+npm install -g @angular/cli
+npm install -g nodemon

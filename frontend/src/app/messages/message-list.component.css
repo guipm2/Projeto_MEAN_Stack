@@ -1,0 +1,101 @@
+/* src/app/messages/message-list.component.css */
+
+/* 1. Contêiner da lista: altura máxima com scroll */
+.list-group {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 0;
+}
+
+/* 2. Cada item: borda, cantos arredondados, espaçamento, sombra e transição */
+.list-group-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column; /* mensagem em cima e meta abaixo */
+}
+
+/* 3. Hover: fundo escuro, texto claro e sombra mais intensa */
+.list-group-item:hover {
+  background-color: #333;
+  color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 3.1. Garantir que .text-muted herde a cor no hover */
+.list-group-item:hover .text-muted {
+  color: #f9f9f9 !important;
+}
+
+/* 4. Bloco de conteúdo da mensagem */
+.message-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+/* 5. Linha de metadados: alinha itens no centro verticalmente */
+.message-meta {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+/* 6. Avatar com contorno e sombra */
+.message-meta .rounded-circle {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/* 7. Nome do usuário */
+.message-meta strong {
+  margin-right: 0.75rem;
+}
+
+/* 8. Data empurrada para a direita */
+.message-meta .text-muted {
+  margin-right: auto;
+  font-style: italic;
+  color: inherit; /* herda somente após hover */
+}
+
+/* 9. Botões “Editar” e “Apagar” */
+.message-meta .btn-link {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  color: inherit;
+  text-decoration: none;
+}
+
+.message-meta .btn-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.message-meta .text-danger:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* 10. Scrollbar customizada (opcional) */
+.list-group::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-group::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list-group::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}

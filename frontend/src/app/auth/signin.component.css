@@ -1,0 +1,23 @@
+.btn-primary {
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-primary:focus {
+  background-color: black;
+  color: white;
+  border-color: black;
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:active {
+  background-color: black;
+  color: white;
+}
+

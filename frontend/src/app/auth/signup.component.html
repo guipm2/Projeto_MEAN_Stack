@@ -1,0 +1,70 @@
+<!-- src/app/auth/signup.component.html -->
+<br>
+<div class="col-md-8 col-md-offset-2">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="firstName">Nome:</label>
+            <input type="text" id="firstName" placeholder="Ex.: Guilherme" class="form-control"
+                formControlName="firstNameTS">
+        </div>
+        <div *ngIf="myForm.get('firstNameTS')?.errors?.['required'] && myForm.get('firstNameTS')?.touched">
+            <p style="color: red;">Nome Obrigatório!</p>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="lastName">Sobrenome:</label>
+            <input type="text" id="lastName" class="form-control" placeholder="Ex.: Miranda"
+                formControlName="lastNameTS">
+        </div>
+        <div *ngIf="myForm.get('lastNameTS')?.errors?.['required'] && myForm.get('lastNameTS')?.touched">
+            <p style="color: red;">Sobrenome Obrigatório!</p>
+        </div>
+        <div *ngIf="myForm.get('lastNameTS')?.errors?.['minlength'] && myForm.get('lastNameTS')?.touched">
+            <p style="color: red;">Sobrenome deve ter no mínimo 4 caracteres.</p>
+        </div>
+        <div *ngIf="myForm.get('lastNameTS')?.errors?.['maxlength'] && myForm.get('lastNameTS')?.touched">
+            <p style="color: red;">Sobrenome deve ter no máximo 16 caracteres.</p>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" placeholder="Ex.: guilherme@gmail.com"
+                formControlName="emailTS">
+        </div>
+        <div *ngIf="myForm.get('emailTS')?.errors?.['required'] && myForm.get('emailTS')?.touched">
+            <p style="color: red;">E-mail Obrigatório!</p>
+        </div>
+        <div *ngIf="myForm.get('emailTS')?.errors?.['pattern'] && myForm.get('emailTS')?.touched">
+            <p style="color: red;">E-mail inválido!</p>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" class="form-control" placeholder="••••••••"
+                formControlName="passwordTS">
+        </div>
+        <div *ngIf="myForm.get('passwordTS')?.errors?.['required'] && myForm.get('passwordTS')?.touched">
+            <p style="color: red;">Senha Obrigatória!</p>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="avatar">Avatar:</label>
+            <input type="file" id="avatar" class="form-control" (change)="onFileSelected($event)" accept="image/*" />
+        </div>
+        <div *ngIf="myForm.get('avatarUrl')?.errors?.['pattern'] && myForm.get('avatarUrl')?.touched">
+            <p style="color: red;">URL inválida!</p>
+        </div>
+
+        <br>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Cadastrar</button>
+    </form>
+</div>
