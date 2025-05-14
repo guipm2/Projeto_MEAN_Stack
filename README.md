@@ -36,7 +36,7 @@ Este projeto foi desenvolvido como trabalho prático da disciplina **Desenvolvim
 ### Outros
 
 - Versionamento com [Git](https://git-scm.com/)
-- Projeto hospedado no [GitHub](https://github.com/seurepo)
+- Projeto hospedado no [GitHub](https://github.com/guipm2/Projeto_MEAN_Stack)
 
 ## 🚀 Como Executar o Projeto
 
