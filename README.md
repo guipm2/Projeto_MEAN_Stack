@@ -48,12 +48,12 @@ Este projeto foi desenvolvido como trabalho prático da disciplina **Desenvolvim
 ### Clonando o Repositório
 
 ```bash
-git clone https://github.com/seuusuario/seurepo.git
-cd seurepo
+git clone https://github.com/guipm2/Projeto_MEAN_Stack
+cd Projeto_MEAN_Stack
 
 cd backend
 npm install
-npm run dev
+npm run start:server
 
 cd frontend
 npm install
